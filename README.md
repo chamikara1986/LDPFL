@@ -16,5 +16,5 @@ If you find this work related to your work and it is useful please cite our work
 ```
 You can read the paper at https://doi.org/10.1007/978-3-031-17140-6_10
 
-## The dataset
-Download SVHN dataset from http://ufldl.stanford.edu/housenumbers/
+## The datasets
+Download the SVHN dataset from http://ufldl.stanford.edu/housenumbers/
