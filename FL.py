@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# This code was utilized and modified from the version available at 
-# https://github.com/yonetaniryo/federated_learning_pytorch/blob/master/FL_pytorch.ipynb 
-# with the following license.  
+# This code was utilized and modified from the version available at
+# https://github.com/yonetaniryo/federated_learning_pytorch/blob/master/FL_pytorch.ipynb
+# with the following license.
 
 # MIT License
 
@@ -37,7 +37,7 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(20480, 2048)
         self.fc2 = nn.Linear(2048, 10)
         self.dropout = nn.Dropout(0.10)
-    def forward(self, x):        
+    def forward(self, x):
         x = self.fc1(x)
         x = F.relu(x)
         x = self.dropout(x)
@@ -47,7 +47,7 @@ class Net(nn.Module):
         return output
 
 class FedMLFunc:
-       
+
     def client_update(self, client_model, optimizer, train_loader, epoch=5):
         correct = 0
         total = 0
@@ -56,13 +56,13 @@ class FedMLFunc:
                 data, target = data.cuda(), target.cuda()
                 optimizer.zero_grad()
                 output = client_model(data)
-                loss = F.nll_loss(output, target)               
+                loss = F.nll_loss(output, target)
                 loss.backward()
-                optimizer.step()            
+                optimizer.step()
                 _, predicted = torch.max(output.data, 1)
                 total += target.size(0)
                 correct += (predicted == target).sum().item()
-                
+
         return [loss.item(),correct/total]
 
     def server_aggregate(self, global_model, client_models):
@@ -71,8 +71,8 @@ class FedMLFunc:
             global_dict[k] = torch.stack([client_models[i].state_dict()[k] for i in range(len(client_models))], 0).mean(0)
         global_model.load_state_dict(global_dict)
         for model in client_models:
-            model.load_state_dict(global_model.state_dict())   
-    
+            model.load_state_dict(global_model.state_dict())
+
     def test(self, global_model, test_loader, test_dataset):
         test_loss = 0
         correct = 0
@@ -80,10 +80,10 @@ class FedMLFunc:
             for data, target in test_loader:
                 data, target = data.cuda(), target.cuda()
                 output = global_model(data)
-                test_loss += F.nll_loss(output, target, reduction='sum').item() 
-                pred = output.argmax(dim=1, keepdim=True)  
+                test_loss += F.nll_loss(output, target, reduction='sum').item()
+                pred = output.argmax(dim=1, keepdim=True)
                 correct += pred.eq(target.view_as(pred)).sum().item()
-        
+
         test_loss /= len(test_dataset.dataset)
         acc = correct / len(test_dataset.dataset)
         return test_loss, acc
