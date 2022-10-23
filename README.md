@@ -2,7 +2,7 @@
 
 This repository contains the source code of of the paper titled "Local Differential Privacy for Federated Learning".
 
-If you find this work related to your work and it is useful please cite our work as:
+If you find that this work is related to your work and it is useful please cite our work as:
  
 ```
  @inproceedings{mahawaga2022local,
