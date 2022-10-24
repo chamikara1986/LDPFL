@@ -31,6 +31,8 @@ Download the SVHN dataset from http://ufldl.stanford.edu/housenumbers/
 - torch==1.12.1
 - matplotlib==3.3.2
 
+Note: The python version used for the experiments: Python 3.9.4
+
 ## Files
 > LDPFL.ipynb: The main program that demonstrates LDPFL on the SVHN dataset. This file includes the main flow of LDPFL.
 
