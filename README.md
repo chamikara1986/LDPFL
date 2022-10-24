@@ -38,9 +38,9 @@ Note: The python version used for the experiments: Python 3.9.4
 > Helper.py : Defines the local model and provides the functionality required for plotting the outputs related to the local model performance.
 
 ## Usage
-1. Install the requirements 
-2. Download the dataset and save it inside a folder named "data"
-3. Make sure cuda is active 
-4. Run LDPFL.ipynb
+1. Install the requirements. 
+2. Download the dataset and save it inside a folder named "data".
+3. Make sure cuda is enabled. 
+4. Run LDPFL.ipynb.
 
 
