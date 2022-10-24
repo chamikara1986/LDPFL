@@ -33,8 +33,11 @@ Download the SVHN dataset from http://ufldl.stanford.edu/housenumbers/
 
 ## Files
 > LDPFL.ipynb: The main program that demonstrates LDPFL on the SVHN dataset. This file includes the main flow of LDPFL.
+
 > Randomizer.py: Defines the data randomization model.
+
 > FL.py : Defines the federated learning functionality.
+
 > Helper.py : Defines the local model and provides the functionality required for plotting the outputs related to the local model performance.
 
 ## Usage
