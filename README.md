@@ -38,7 +38,7 @@ Note: The python version used for the experiments: Python 3.9.4
 
 > Randomizer.py: Defines the data randomization model.
 
-> FL.py : Defines the federated learning functionality.
+> FL.py : Defines the federated learning setup.
 
 > Helper.py : Defines the local model and provides the functionality required for plotting the outputs related to the local model performance.
 
