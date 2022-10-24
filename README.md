@@ -1,6 +1,6 @@
 # Local Differential Privacy for Federated Learning: LDPFL
 
-This repository contains the source code of of the paper titled "Local Differential Privacy for Federated Learning". 
+This repository contains the source code of the paper titled "Local Differential Privacy for Federated Learning". 
 For more details, you can read the paper at https://doi.org/10.1007/978-3-031-17140-6_10
 
 If you find that this work is related to your work and it is useful, please cite our work as:
